@@ -1,0 +1,113 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "io.datapith.actors",
+    "module": "cukedoctor",
+    "version": "0.1.0",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "7.4"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.jvm.version": 11,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "files": [
+        {
+          "name": "cukedoctor-0.1.0.jar",
+          "url": "cukedoctor-0.1.0.jar",
+          "size": 6614,
+          "sha512": "aacd0d1b48186f07fd9cfbce764d3967b2828b43b2077e1c376bb62693d4a95fbfdee23f0a490ff3d11c9847313cf217209c4f49e048cca528036d6ba6499adc",
+          "sha256": "ed805093891b7b11e91797507d53254de79adae902d40d2dbb6553ea31815d5d",
+          "sha1": "8e3be9105df82752010d2766b8b7073b98c33381",
+          "md5": "8047ddcd630fa5476b80a2f92a4b59ec"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.jvm.version": 11,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "1.7.20"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "cukedoctor-0.1.0.jar",
+          "url": "cukedoctor-0.1.0.jar",
+          "size": 6614,
+          "sha512": "aacd0d1b48186f07fd9cfbce764d3967b2828b43b2077e1c376bb62693d4a95fbfdee23f0a490ff3d11c9847313cf217209c4f49e048cca528036d6ba6499adc",
+          "sha256": "ed805093891b7b11e91797507d53254de79adae902d40d2dbb6553ea31815d5d",
+          "sha1": "8e3be9105df82752010d2766b8b7073b98c33381",
+          "md5": "8047ddcd630fa5476b80a2f92a4b59ec"
+        }
+      ]
+    },
+    {
+      "name": "javadocElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "javadoc",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "cukedoctor-0.1.0-javadoc.jar",
+          "url": "cukedoctor-0.1.0-javadoc.jar",
+          "size": 261,
+          "sha512": "5bb6b0c4949114d57fce7681de9d9bebd530082fa5b149052a21e488867f5cc7b3ff081a61a0c1b85577f0be4fae6e7a3c71bc5e4278344e0de5050a544045ca",
+          "sha256": "e1e3e2239520e719d25061daf7b391ae409d4264019ae93ee8651325922f4dbe",
+          "sha1": "abeadac17dd70f26d948ed35ef201763c227a3c5",
+          "md5": "3cde0dfae92128f29fdbaa91cad9ab2e"
+        }
+      ]
+    },
+    {
+      "name": "sourcesElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "cukedoctor-0.1.0-sources.jar",
+          "url": "cukedoctor-0.1.0-sources.jar",
+          "size": 2383,
+          "sha512": "45fb81700c1e8db7f7f6dd72264eacf099668b8bf8f05f2105082728c5798ac0e6bb02d432ec6b45c8da49b93e5fb3cfebffabacf719ebd53e5db46a28859185",
+          "sha256": "457f805f6ffafe2d489e2174ae7e5d8bc0abb79c5243ceef28c12720eeceaa4d",
+          "sha1": "07b6dfdc8d4282fd3ba4971754f8eda122d13d54",
+          "md5": "b3a5842e0a22bc7cb55bf89f190306fb"
+        }
+      ]
+    }
+  ]
+}
