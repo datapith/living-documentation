@@ -1,0 +1,33 @@
+= Readme
+
+To build and deploy plugin to local maven repository:
+
+[source]
+----
+gradlew clean build publishToMavenLocal
+----
+
+To display logs written to console we need to define the log level in the command line:
+
+[cols="1,1"]
+|===
+|Option|Outputs Log Levels
+
+|no logging options
+|LIFECYCLE and higher
+
+|`-q` or `--quiet`
+|QUIET and higher
+
+|`-w` or `--warn`
+|WARN and higher
+
+|`-i` or `--info`
+|INFO and higher
+
+|`-d` or `--debug`
+|DEBUG and higher (that is, all log messages)
+
+|===
+
+For example `gradlew executeCukedoctor -i`

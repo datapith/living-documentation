@@ -1,0 +1,24 @@
+# Logs
+*.log
+
+# Package
+*.jar
+*.zip
+*.tar.gz
+*.rar
+
+# Gradle
+.gradle
+!gradle-wrapper.jar
+.gradletasknamecache
+build/
+
+# Intellij
+.idea/
+*.iml
+*.ipr
+*.iws
+out/
+
+# Custom
+private/

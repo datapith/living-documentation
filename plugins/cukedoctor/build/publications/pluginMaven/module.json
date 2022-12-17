@@ -29,11 +29,11 @@
         {
           "name": "cukedoctor-0.1.0.jar",
           "url": "cukedoctor-0.1.0.jar",
-          "size": 6614,
-          "sha512": "aacd0d1b48186f07fd9cfbce764d3967b2828b43b2077e1c376bb62693d4a95fbfdee23f0a490ff3d11c9847313cf217209c4f49e048cca528036d6ba6499adc",
-          "sha256": "ed805093891b7b11e91797507d53254de79adae902d40d2dbb6553ea31815d5d",
-          "sha1": "8e3be9105df82752010d2766b8b7073b98c33381",
-          "md5": "8047ddcd630fa5476b80a2f92a4b59ec"
+          "size": 12377,
+          "sha512": "a37268e06eeda8a03b1e9a74e1efb1039305475b0485c1626c70551e54b65a3918f18c498297f6409157f78ea4b634765a456b266851cf7e3e8f26b2036e4bbc",
+          "sha256": "d494a94efdfa1ebb7de5a2b33af1569972e0030eef7e6c9ce8c437e59283a82f",
+          "sha1": "33387d1351f881399bf094c359a4794b3380e3a2",
+          "md5": "9308f5dc05392889d126497caa707c07"
         }
       ]
     },
@@ -61,11 +61,11 @@
         {
           "name": "cukedoctor-0.1.0.jar",
           "url": "cukedoctor-0.1.0.jar",
-          "size": 6614,
-          "sha512": "aacd0d1b48186f07fd9cfbce764d3967b2828b43b2077e1c376bb62693d4a95fbfdee23f0a490ff3d11c9847313cf217209c4f49e048cca528036d6ba6499adc",
-          "sha256": "ed805093891b7b11e91797507d53254de79adae902d40d2dbb6553ea31815d5d",
-          "sha1": "8e3be9105df82752010d2766b8b7073b98c33381",
-          "md5": "8047ddcd630fa5476b80a2f92a4b59ec"
+          "size": 12377,
+          "sha512": "a37268e06eeda8a03b1e9a74e1efb1039305475b0485c1626c70551e54b65a3918f18c498297f6409157f78ea4b634765a456b266851cf7e3e8f26b2036e4bbc",
+          "sha256": "d494a94efdfa1ebb7de5a2b33af1569972e0030eef7e6c9ce8c437e59283a82f",
+          "sha1": "33387d1351f881399bf094c359a4794b3380e3a2",
+          "md5": "9308f5dc05392889d126497caa707c07"
         }
       ]
     },
@@ -82,10 +82,10 @@
           "name": "cukedoctor-0.1.0-javadoc.jar",
           "url": "cukedoctor-0.1.0-javadoc.jar",
           "size": 261,
-          "sha512": "5bb6b0c4949114d57fce7681de9d9bebd530082fa5b149052a21e488867f5cc7b3ff081a61a0c1b85577f0be4fae6e7a3c71bc5e4278344e0de5050a544045ca",
-          "sha256": "e1e3e2239520e719d25061daf7b391ae409d4264019ae93ee8651325922f4dbe",
-          "sha1": "abeadac17dd70f26d948ed35ef201763c227a3c5",
-          "md5": "3cde0dfae92128f29fdbaa91cad9ab2e"
+          "sha512": "3d8fa6a3c3b90f5de3d530b17296881af8e0952461519b911aa907aa3ee1d35d0dd0456b998f97a67077fb6bf253ef15299b8e9b1f77924351f875601075c33e",
+          "sha256": "6217067fa75abd0031cf2529246cb42a63aced0a679592a26a5d2058ddc979b8",
+          "sha1": "bb2e7ff9a47fe2827ab5329b118f8a5c5df7175a",
+          "md5": "ebcd0953c1882ee7b0266b5559cdd111"
         }
       ]
     },
@@ -101,11 +101,11 @@
         {
           "name": "cukedoctor-0.1.0-sources.jar",
           "url": "cukedoctor-0.1.0-sources.jar",
-          "size": 2383,
-          "sha512": "45fb81700c1e8db7f7f6dd72264eacf099668b8bf8f05f2105082728c5798ac0e6bb02d432ec6b45c8da49b93e5fb3cfebffabacf719ebd53e5db46a28859185",
-          "sha256": "457f805f6ffafe2d489e2174ae7e5d8bc0abb79c5243ceef28c12720eeceaa4d",
-          "sha1": "07b6dfdc8d4282fd3ba4971754f8eda122d13d54",
-          "md5": "b3a5842e0a22bc7cb55bf89f190306fb"
+          "size": 4918,
+          "sha512": "6d3e963109179953305e630c1a521cee743bf47e9810d827c7446d6f7ad385be1886789a9a6743dc3d1a79763f8cdb239778c8a7dc6fe4bed9a9c15c136175bf",
+          "sha256": "279fc236dfa55da4d2a8611c26bb35613b7b8909d5f8aa72470fab99876fd34d",
+          "sha1": "a233af704e9d97cb191dc31f78fdeb541d6c5911",
+          "md5": "4ba9e237356915944ce4509103f4a38b"
         }
       ]
     }
