@@ -10,7 +10,7 @@
   },
   "createdBy": {
     "gradle": {
-      "version": "7.4"
+      "version": "7.6"
     }
   },
   "variants": [
@@ -29,11 +29,11 @@
         {
           "name": "cukedoctor-0.1.0.jar",
           "url": "cukedoctor-0.1.0.jar",
-          "size": 14620,
-          "sha512": "02b0e7335f7fb71f85b178fbc99e3e94a564a6ba3a7cb93f67a880155f22daded93bd215d9e0430c69352fe62369606eef7f9597eb3b17280306c9cd93cd8a49",
-          "sha256": "4de59d15b13c891fbd776f783070aba6bdab1923f03a421212080dceed7a94b7",
-          "sha1": "cb952e2d19e3ebd97a65169dd7e203bd6d42bdc0",
-          "md5": "56f9ed7872a4803f669f073588b7ab41"
+          "size": 14530,
+          "sha512": "5cf15d0a8ac78b1b6f18891f1a6f08f15e64937bc7bd68a67e592b38270921426901bda5c5d7af7fc1c85ca649582ccd3d074989264935e5c64a1af20eaa6488",
+          "sha256": "761c347b590cd79d8ad84c08e43d3222427a41db4f663ff83726a1319b7f05d4",
+          "sha1": "7368bb717269b6db1866323b36d0d876b4f5680c",
+          "md5": "0f585f9b53a1adbee98a9128258e8395"
         }
       ]
     },
@@ -68,11 +68,11 @@
         {
           "name": "cukedoctor-0.1.0.jar",
           "url": "cukedoctor-0.1.0.jar",
-          "size": 14620,
-          "sha512": "02b0e7335f7fb71f85b178fbc99e3e94a564a6ba3a7cb93f67a880155f22daded93bd215d9e0430c69352fe62369606eef7f9597eb3b17280306c9cd93cd8a49",
-          "sha256": "4de59d15b13c891fbd776f783070aba6bdab1923f03a421212080dceed7a94b7",
-          "sha1": "cb952e2d19e3ebd97a65169dd7e203bd6d42bdc0",
-          "md5": "56f9ed7872a4803f669f073588b7ab41"
+          "size": 14530,
+          "sha512": "5cf15d0a8ac78b1b6f18891f1a6f08f15e64937bc7bd68a67e592b38270921426901bda5c5d7af7fc1c85ca649582ccd3d074989264935e5c64a1af20eaa6488",
+          "sha256": "761c347b590cd79d8ad84c08e43d3222427a41db4f663ff83726a1319b7f05d4",
+          "sha1": "7368bb717269b6db1866323b36d0d876b4f5680c",
+          "md5": "0f585f9b53a1adbee98a9128258e8395"
         }
       ]
     },
@@ -89,10 +89,10 @@
           "name": "cukedoctor-0.1.0-javadoc.jar",
           "url": "cukedoctor-0.1.0-javadoc.jar",
           "size": 261,
-          "sha512": "8b47c87b52017a1d90a5b4217afe73b6bc3ba26d126213b47c3ae9d977b4f65f1027bb445fdaf27aea2e6dac87f6355f5788c5a2a0282a7f8ddc1f03fe2c88e8",
-          "sha256": "cf4ceb371e3ffcc7432caeda199280e092a803dc41a8bdf61482ad0a790259b5",
-          "sha1": "62e9cb9a66348407d3925fabfdb92ffb6ac6ced3",
-          "md5": "781f5fa88474d3226e220b27c563fa85"
+          "sha512": "2ccd81f0afba787f703b3853e8a4ad6f6fbf5cc922458ede17dadde5deed2a668a8bee5808af423774d20cbba1b0c62d131e76e02e78926a8eff60d60202be9e",
+          "sha256": "3d1ca283415eaa3c3876ed9442bc261451cc45d5641facc1184488d3bca568ba",
+          "sha1": "8ac513ea7e219d314697b35c51cd519779f5a022",
+          "md5": "d2bd56992858036ae20e2a828d6d82af"
         }
       ]
     },
@@ -109,10 +109,10 @@
           "name": "cukedoctor-0.1.0-sources.jar",
           "url": "cukedoctor-0.1.0-sources.jar",
           "size": 6341,
-          "sha512": "50b5ae3ef94321a42a48f66c7d499adc06b85683b6173dbea8f5cda03d6f46dec59c6394bd9f3ebffae525fe622aaf46ee5af576c7b38945cdc18f1e95b08deb",
-          "sha256": "4dc84e9907b0fc3a05b44f3be616b903981779d1edde1b38d29dbb71893becdf",
-          "sha1": "65ed2d2ebaacaa93ad4674b180098e46ecc802b0",
-          "md5": "38f3998d47cc621eecba786b4dc51b54"
+          "sha512": "dcb84bb6cd8950aa6694f889acfa93ea97705b06b31516db9b96910001832f15f7de72bd0d7e550c4fd768e08554fee9083d084fd6e7070b12aaabca3fbf02dc",
+          "sha256": "887114ad48561d4b5d2e93712485658a0c51bc6b8c2ec7004620b9f5e4894aa2",
+          "sha1": "182b05cf431e432b19a7c006f87c6419f2b1b139",
+          "md5": "21ad31fe108d04094037590541cb5989"
         }
       ]
     }
