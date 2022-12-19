@@ -26,6 +26,7 @@ class CukedoctorPlugin : Plugin<Project> {
             it.docVersion.set(extension.docVersion)
             it.featuresDir.set(extension.featuresDir)
             it.format.set(extension.format)
+            it.hardBreaks.set((extension.hardBreaks))
             it.hideFeaturesSection.set(extension.hideFeaturesSection)
             it.hideScenarioKeyword.set(extension.hideScenarioKeyword)
             it.hideStepTime.set(extension.hideStepTime)
@@ -37,7 +38,9 @@ class CukedoctorPlugin : Plugin<Project> {
             it.sourceHighlighter.set(extension.sourceHighlighter)
             it.stem.set(extension.stem)
             it.tocPosition.set(extension.tocPosition)
-         }
 
+            // Make sure that task is executed after project build
+            it.dependsOn("build")
+         }
     }
 }

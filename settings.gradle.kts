@@ -3,6 +3,8 @@ include(
     "example"
 )
 
+val cucumberVersion: String by settings
+val cukedoctorVersion: String by settings
 val detektPluginVersion: String by settings
 val junitVersion: String by settings
 val mockkVersion: String by settings
@@ -42,6 +44,14 @@ dependencyResolutionManagement {
     versionCatalogs {
         create("libs") {
 
+            library("cucumber.java", "io.cucumber:cucumber-java:$cucumberVersion")
+            library("cucumber.junit", "io.cucumber:cucumber-junit:$cucumberVersion")
+            bundle("cucumber", listOf("cucumber.java", "cucumber.junit", "junit.vintage-engine"))
+
+            library("cukedoctor", "com.github.cukedoctor:cukedoctor:$cukedoctorVersion")
+            library("cukedoctor.converter", "com.github.cukedoctor:cukedoctor-converter:$cukedoctorVersion")
+
+
             library(
                 "detekt.formatting",
                 "io.gitlab.arturbosch.detekt:detekt-formatting:$detektPluginVersion"
@@ -49,6 +59,7 @@ dependencyResolutionManagement {
 
             library("junit.api", "org.junit.jupiter:junit-jupiter-api:$junitVersion")
             library("junit.engine", "org.junit.jupiter:junit-jupiter-engine:$junitVersion")
+            library("junit.vintage-engine", "org.junit.vintage:junit-vintage-engine:$junitVersion")
 
             library("mockk", "io.mockk:mockk:$mockkVersion")
         }

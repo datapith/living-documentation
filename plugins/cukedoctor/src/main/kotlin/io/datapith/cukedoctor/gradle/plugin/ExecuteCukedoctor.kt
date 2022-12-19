@@ -1,5 +1,10 @@
 package io.datapith.cukedoctor.gradle.plugin
 
+import com.github.cukedoctor.Cukedoctor
+import com.github.cukedoctor.api.model.Feature
+import com.github.cukedoctor.config.GlobalConfig
+import com.github.cukedoctor.parser.FeatureParser
+import com.github.cukedoctor.util.FileUtil
 import io.datapith.cukedoctor.gradle.plugin.model.Format
 import io.datapith.cukedoctor.gradle.plugin.model.Position
 import org.gradle.api.DefaultTask
@@ -8,6 +13,9 @@ import org.gradle.api.tasks.Input
 import org.gradle.api.tasks.Optional
 import org.gradle.api.tasks.TaskAction
 import org.gradle.api.tasks.options.Option
+import java.nio.file.Paths
+import java.util.*
+import kotlin.io.path.absolutePathString
 
 @Suppress("UnnecessaryAbstractClass")
 abstract class ExecuteCukedoctor : DefaultTask() {
@@ -91,6 +99,16 @@ abstract class ExecuteCukedoctor : DefaultTask() {
     abstract val format: Property<Format>
 
     /**
+     * Normally when we write a paragraph in Asciidoc markup the line breaks are not preserved. Multiple lines are
+     * combined into a paragraph until an empty line is found to separate paragraphs. If we want to keep line breaks
+     * we must add the plus sign (+) at the end of the line. To simulate the same behavior we can also set the
+     * `hardbreaks` option to true
+     */
+    @get:Input
+    @get:Option(option = "hardBreaks", description = "Preserve hard breaks in paragraphs")
+    abstract val hardBreaks: Property<Boolean>
+
+    /**
      * Hide `Features` section
      */
     @get:Input
@@ -124,6 +142,17 @@ abstract class ExecuteCukedoctor : DefaultTask() {
     @get:Input
     @get:Option(option = "hideSummarySection", description = "Hide `Summary` section")
     abstract val hideSummarySection: Property<Boolean>
+
+    /**
+     * External directory containing file named `cukedoctor-intro.adoc`. If such file is found the content of the
+     * file will be placed between Documentation title and summary section.
+     */
+    @get:Input
+    @get:Option(
+        option = "introChapterDir",
+        description = "External directory containing file named `cukedoctor-intro.adoc`")
+    @get:Optional
+    abstract val introChapterDir :Property<String>
 
     /**
      * Section numbering
@@ -174,8 +203,51 @@ abstract class ExecuteCukedoctor : DefaultTask() {
 
     @TaskAction
     fun execute() {
-        logger.warn("bla $outputFileName")
-        println("Received features dir is ${featuresDir.get()}")
-        println("Received format is ${format.get()}")
+        // Configure system properties cukedoctor
+        if (introChapterDir.isPresent) {
+            System.setProperty("INTRO_CHAPTER_DIR", introChapterDir.get())
+        }
+        System.setProperty("HIDE_FEATURES_SECTION", hideFeaturesSection.get().toString())
+        System.setProperty("HIDE_SUMMARY_SECTION", hideSummarySection.get().toString())
+        System.setProperty("HIDE_SCENARIO_KEYWORD", hideScenarioKeyword.get().toString())
+        System.setProperty("HIDE_STEP_TIME", hideStepTime.get().toString())
+        System.setProperty("HIDE_TAGS", hideTags.get().toString())
+
+        logger.info("Searching cucumber features in path: ${featuresDir.get()}")
+        val featuresFound: List<Feature> = FeatureParser.findAndParse(featuresDir.get())
+        if (featuresFound.isEmpty()) {
+            // Couldn't find any feature file so stop execution of task
+            logger.warn("No cucumber json files found in ${featuresDir.get()}")
+            return
+        } else {
+           logger.info("Generating living documentation for ${featuresFound.size} feature(s)...")
+        }
+
+        val documentAttributes = GlobalConfig.newInstance()
+            .documentAttributes
+            .backend(format.get().name.lowercase(Locale.getDefault()))
+            .toc(tocPosition.get().name.lowercase(Locale.getDefault()))
+            .revNumber(docVersion.get())
+            .hardBreaks(hardBreaks.get())
+            .numbered(numbered.get())
+//            .chapterLabel(chapterLabel)
+//            .versionLabel(versionLabel)
+//            .stem(stem)
+
+        val converter = Cukedoctor.instance(featuresFound, documentAttributes)
+        val targetFile: String
+        if (outputFileName.get().contains(".")) {
+            targetFile = outputFileName.get().substring(0, outputFileName.get().lastIndexOf(".")) + ".adoc"
+        } else {
+            targetFile = outputFileName.get() + ".adoc"
+        }
+
+        val targetDir: String = outputDir.get()
+        val pathToSave = Paths.get(targetDir,targetFile).absolutePathString()
+        converter.setFilename(pathToSave) // needed by docinfo, pdf-theme
+
+        val generatedFile = converter.renderDocumentation()
+        FileUtil.saveFile(pathToSave, generatedFile)
+
     }
 }

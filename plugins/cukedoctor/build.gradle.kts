@@ -7,6 +7,7 @@ plugins {
 dependencies {
     implementation(kotlin("stdlib"))
     implementation(gradleApi())
+    implementation(libs.cukedoctor.converter)
 }
 
 gradlePlugin {

@@ -3,6 +3,8 @@ package io.datapith.cukedoctor.gradle.plugin
 import io.datapith.cukedoctor.gradle.plugin.model.Format
 import io.datapith.cukedoctor.gradle.plugin.model.Position
 import org.gradle.api.Project
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 import javax.inject.Inject
 
 /**
@@ -47,6 +49,7 @@ abstract class CukedoctorExtension @Inject constructor(project: Project) {
      * Documentation version
      */
     val docVersion = projectObjects.property(String::class.java)
+        .convention(LocalDateTime.now().format(DateTimeFormatter.ISO_DATE_TIME))
 
     /**
      * Directory to start searching (recursively) for cucumber json output
@@ -57,6 +60,14 @@ abstract class CukedoctorExtension @Inject constructor(project: Project) {
      * Generated documetation format. Possible values: pdf, html, html5, all
      */
     val format = projectObjects.property(Format::class.java).convention(Format.HTML)
+
+    /**
+     * Normally when we write a paragraph in Asciidoc markup the line breaks are not preserved. Multiple lines are
+     * combined into a paragraph until an empty line is found to separate paragraphs. If we want to keep line breaks
+     * we must add the plus sign (+) at the end of the line. To simulate the same behavior we can also set the
+     * `hardbreaks` option to true
+     */
+    val hardBreaks = projectObjects.property(Boolean::class.java).convention(true)
 
     /**
      * Hide `Features` section
@@ -84,6 +95,12 @@ abstract class CukedoctorExtension @Inject constructor(project: Project) {
     val hideTags = projectObjects.property(Boolean::class.java).convention(false)
 
     /**
+     * External directory containing file named `cukedoctor-intro.adoc`. If such file is found the content of the
+     * file will be placed between Documentation title and summary section.
+     */
+    val introChapterDir = projectObjects.property(String::class.java)
+
+    /**
      * Section numbering
      */
     val numbered = projectObjects.property(Boolean::class.java).convention(true)
@@ -107,7 +124,7 @@ abstract class CukedoctorExtension @Inject constructor(project: Project) {
     /**
      * Sets the asciidoc stem attribute to the specified interpreter e.g. `latexmath`
      */
-    val stem = projectObjects.property(String::class.java)
+    val stem = projectObjects.property(String::class.java).convention("latexmath")
 
     /**
      * Table of contents position
