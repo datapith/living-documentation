@@ -3,6 +3,7 @@ package io.datapith.cukedoctor.gradle.plugin
 import com.github.cukedoctor.Cukedoctor
 import com.github.cukedoctor.api.model.Feature
 import com.github.cukedoctor.config.GlobalConfig
+import com.github.cukedoctor.extension.CukedoctorExtensionRegistry.MINMAX_DISABLE_EXT_KEY
 import com.github.cukedoctor.parser.FeatureParser
 import com.github.cukedoctor.util.FileUtil
 import io.datapith.cukedoctor.gradle.plugin.model.Format
@@ -212,6 +213,9 @@ abstract class ExecuteCukedoctor : DefaultTask() {
 
     @TaskAction
     fun execute() {
+        // Always disable the minmax extension
+        System.setProperty(MINMAX_DISABLE_EXT_KEY, "true");
+
         // Configure system properties cukedoctor
         if (introChapterDir.isPresent) {
             System.setProperty("INTRO_CHAPTER_DIR", introChapterDir.get())
@@ -235,14 +239,15 @@ abstract class ExecuteCukedoctor : DefaultTask() {
         val documentAttributes = GlobalConfig.newInstance()
             .documentAttributes
             .allowUriRead(allowUriRead.get())
+            .backend(format.get().name.lowercase(Locale.getDefault()))
+            .chapterLabel(chapterLabel.get())
             .dataUri(!disableDataUri.get())
             .docTitle(documentTitle.get())
-            .backend(format.get().name.lowercase(Locale.getDefault()))
-            .toc(tocPosition.get().name.lowercase(Locale.getDefault()))
-            .revNumber(docVersion.get())
             .hardBreaks(hardBreaks.get())
             .numbered(numbered.get())
-            .chapterLabel(chapterLabel.get())
+            .revNumber(docVersion.get())
+            .sourceHighlighter(sourceHighlighter.get())
+            .toc(tocPosition.get().name.lowercase(Locale.getDefault()))
             .versionLabel(versionLabel.get())
 //            .stem(stem)
 
