@@ -12,6 +12,8 @@ dependencies {
 
 gradlePlugin {
     plugins {
+        website.set(property("WEBSITE").toString())
+        vcsUrl.set(property("VCS_URL").toString())
         create(property("ID").toString()) {
             id = property("ID").toString()
             implementationClass = property("IMPLEMENTATION_CLASS").toString()
