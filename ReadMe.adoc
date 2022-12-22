@@ -1,0 +1,56 @@
+= Living Documentation
+:page-layout: base
+:toc: preamble
+:source-language: java
+:icons: font
+:linkattrs:
+:sectanchors:
+:sectlink:
+:numbered:
+:imagesdir: img
+:doctype: book
+:tip-caption: :bulb:
+:note-caption: :information_source:
+:important-caption: :heavy_exclamation_mark:
+:caution-caption: :fire:
+:warning-caption: :warning:
+
+
+[quote]
+____
+You don't need to choose between Working Software and Extensive Documentation!
+____
+
+== Gradle plugin
+
+This module brings the ability to execute Cukedoctor within a maven build.
+
+The plugin just scans *.json* cucumber execution files in _build_ dir and generates asciidoc documentation on _build/cukedoctor_ folder.
+
+=== Usage
+
+Just declare the plugin in your _build.gradle.kts_:
+
+[source]
+----
+plugins {
+    id("io.datapith.cukedoctor").version(0.1.0)
+}
+
+cukedoctor {
+}
+----
+
+and execute the task `executeCukedoctor`
+
+[IMPORTANT]
+======
+To generate cucumber .json output files just execute your tests with *json* formatter, example:
+
+[source]
+----
+@RunWith(Cucumber.class)
+@CucumberOptions(plugin = {"json:build/test-results/BddTests.json"} )
+----
+
+

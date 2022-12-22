@@ -19,6 +19,8 @@ gradlePlugin {
             implementationClass = property("IMPLEMENTATION_CLASS").toString()
             version = property("VERSION").toString()
             displayName = property("DISPLAY_NAME").toString()
+            description = property("DESCRIPTION").toString()
+            tags.set(listOf("testing", "integrationTesting", "cucumber", "asciidoc", "documentation", "living-documentation"))
         }
     }
 }
