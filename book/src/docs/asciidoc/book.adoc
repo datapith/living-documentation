@@ -3,7 +3,7 @@
 :includedir: .
 :toc: left
 
-include::abstract.adoc[]
+include::{includedir}/preface[]
 
 [preface]
 include::{includedir}/preface.adoc[]
