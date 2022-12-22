@@ -1,0 +1,14 @@
+[abstract]
+--
+.Abstract
+The book "Specification by Example" has introduced the idea of "Living Documentation", documentation that evolves at the same pace as the code. In the book an example of behavior, used for documentation, is promoted into an automated test. Whenever the test fails, it signals that the documentation is no longer in sync with the code.
+
+This approach shows that it is possible to have useful documentation that doesn't suffer the fate of getting obsolete once written. But we can go much further.
+
+Within this book we expand on this idea of a Living Documentation for many aspects of a project, from the business goals to the business domain knowledge, architecture and design, processes and deployment.
+
+The book is kept short, with illustrations and concrete examples. You will learn how to start investing into documentation that is always up-to-date, at a minimal extra cost thanks to well-crafted artifacts and a reasonable amount of automation.
+
+**You don't need to choose between Working Software and Extensive Documentation!
+**
+--

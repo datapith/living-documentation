@@ -3,4 +3,14 @@
 :includedir: .
 :toc: left
 
+include::{includedir}/abstract.adoc[]
+
+[preface]
 include::{includedir}/preface.adoc[]
+
+[ditaa, target="test", format="svg"]
+----
++----+
+|TEST|---->
++----+
+----

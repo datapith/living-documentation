@@ -11,7 +11,7 @@
 .gradle
 !gradle-wrapper.jar
 .gradletasknamecache
-build/
+**/build/
 
 # Intellij
 .idea/
