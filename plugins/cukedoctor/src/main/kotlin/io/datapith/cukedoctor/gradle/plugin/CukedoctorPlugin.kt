@@ -17,7 +17,8 @@ class CukedoctorPlugin : Plugin<Project> {
 
         // Add a task that uses configuration from the extension object
         project.tasks.register(TASK_NAME, ExecuteCukedoctor::class.java) {
-            it.allowUriRead.set((extension.allowUriRead))
+            it.allowUriRead.set(extension.allowUriRead)
+            it.chapterLabel.set(extension.chapterLabel)
             it.disableDataUri.set(extension.disableDataUri)
             it.disableFilter.set(extension.disableFilter)
             it.disableMinimizable.set(extension.disableMinimizable)
@@ -38,6 +39,7 @@ class CukedoctorPlugin : Plugin<Project> {
             it.sourceHighlighter.set(extension.sourceHighlighter)
             it.stem.set(extension.stem)
             it.tocPosition.set(extension.tocPosition)
+            it.versionLabel.set(extension.versionLabel)
 
             // Make sure that task is executed after project build
             it.dependsOn("build")

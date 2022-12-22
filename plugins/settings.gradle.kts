@@ -1,11 +1,7 @@
 include(
-    "book",
-    "example"
+    "cukedoctor"
 )
-includeBuild("plugins")
 
-
-val cucumberVersion: String by settings
 val cukedoctorVersion: String by settings
 val detektPluginVersion: String by settings
 val junitVersion: String by settings
@@ -13,14 +9,10 @@ val mockkVersion: String by settings
 
 enableFeaturePreview("VERSION_CATALOGS")
 
-with(rootProject) {
-    name = "Living Documentation"
-}
-
 pluginManagement {
     val kotlinVersion: String by settings
     val detektPluginVersion: String by settings
-    val asciidoctorPluginVersion: String by settings
+    val pluginPublishVersion: String by settings
 
     plugins {
         kotlin("jvm") version kotlinVersion
@@ -28,11 +20,10 @@ pluginManagement {
         // Plugin quality check code
         id("io.gitlab.arturbosch.detekt").version(detektPluginVersion)
 
-        id("org.asciidoctor.jvm.convert").version(asciidoctorPluginVersion)
+        id("com.gradle.plugin-publish").version(pluginPublishVersion)
     }
 
     repositories {
-        mavenLocal()
         mavenCentral()
         maven {
             url = uri("https://plugins.gradle.org/m2/")
@@ -46,9 +37,7 @@ dependencyResolutionManagement {
     versionCatalogs {
         create("libs") {
 
-            library("cucumber.java", "io.cucumber:cucumber-java:$cucumberVersion")
-            library("cucumber.junit", "io.cucumber:cucumber-junit:$cucumberVersion")
-            bundle("cucumber", listOf("cucumber.java", "cucumber.junit", "junit.vintage-engine"))
+            library("cukedoctor.converter", "com.github.cukedoctor:cukedoctor-converter:$cukedoctorVersion")
 
             library(
                 "detekt.formatting",

@@ -7,7 +7,7 @@ plugins {
 }
 
 allprojects {
-    group = "io.datapith.living-documentation"
+    group = "io.datapith.plugins"
 
     repositories {
         mavenCentral()

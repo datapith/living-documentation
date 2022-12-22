@@ -36,6 +36,10 @@ abstract class ExecuteCukedoctor : DefaultTask() {
     @get:Option(option = "allowUriRead", description = "Allow included content to be referenced by an URI")
     abstract val allowUriRead: Property<Boolean>
 
+    @get:Input
+    @get:Option(option = "chapterLabel", description = "prefix for chapter tables")
+    abstract val chapterLabel : Property<String>
+
     /**
      * Disable the AsciiDoc 'data-uri' attribute
      */
@@ -200,6 +204,11 @@ abstract class ExecuteCukedoctor : DefaultTask() {
     @get:Option(option = "tocPosition", description = "Table of contents position")
     abstract val tocPosition: Property<Position>
 
+    @get:Input
+    @get:Option(
+        option = "versionLabel",
+        description = "Controls the version label displayed before the revision number in the byline")
+    abstract val versionLabel : Property<String>
 
     @TaskAction
     fun execute() {
@@ -225,13 +234,16 @@ abstract class ExecuteCukedoctor : DefaultTask() {
 
         val documentAttributes = GlobalConfig.newInstance()
             .documentAttributes
+            .allowUriRead(allowUriRead.get())
+            .dataUri(!disableDataUri.get())
+            .docTitle(documentTitle.get())
             .backend(format.get().name.lowercase(Locale.getDefault()))
             .toc(tocPosition.get().name.lowercase(Locale.getDefault()))
             .revNumber(docVersion.get())
             .hardBreaks(hardBreaks.get())
             .numbered(numbered.get())
-//            .chapterLabel(chapterLabel)
-//            .versionLabel(versionLabel)
+            .chapterLabel(chapterLabel.get())
+            .versionLabel(versionLabel.get())
 //            .stem(stem)
 
         val converter = Cukedoctor.instance(featuresFound, documentAttributes)

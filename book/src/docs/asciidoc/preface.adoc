@@ -1,0 +1,5 @@
+= Preface
+
+Long ago I had a dream of creating tools that could understand the user requirements and convert them into working code. I spent a lot of free time over several years trying to come up with a framework for that, only to find out it's very hard to make such a framework suitable for everyone. While working on this I recognized there was a need for, better ways to document, to keep documentation up-to-date, and to generate it automatically without manual effort.
+
+The concept of Living Documentation was introduced by Gojko Adzic, as one of the many benefits of Specifications by Example. It seemed like a good name for the many ideas I had regarding documentation and how to improve it. I wrote down a list of the things I had tried, plus other stuff I had learnt around the topic. As all that was growing I decided to make it into a book instead of offering a framework ready for use. I believe a book explaining the concepts of Living Documentation will be more useful to help you create your own Living Documentation.

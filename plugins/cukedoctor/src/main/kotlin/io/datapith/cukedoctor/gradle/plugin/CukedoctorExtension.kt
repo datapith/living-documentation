@@ -21,6 +21,11 @@ abstract class CukedoctorExtension @Inject constructor(project: Project) {
     val allowUriRead = projectObjects.property(Boolean::class.java).convention(false)
 
     /**
+     * Prefix for chapter tables.
+     */
+    val chapterLabel = projectObjects.property(String::class.java).convention("Chapter")
+
+    /**
      * Disable the AsciiDoc 'data-uri' attribute
      */
     val disableDataUri = projectObjects.property(Boolean::class.java).convention(false)
@@ -131,4 +136,8 @@ abstract class CukedoctorExtension @Inject constructor(project: Project) {
      */
     val tocPosition = projectObjects.property(Position::class.java).convention(Position.RIGHT)
 
+    /**
+     * Controls the version label displayed before the revision number in the byline
+     */
+    val versionLabel = projectObjects.property(String::class.java).convention("Version")
 }

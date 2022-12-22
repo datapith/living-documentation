@@ -1,0 +1,6 @@
+= Living documentation
+:doctype: book
+:includedir: .
+:toc: left
+
+include::{includedir}/preface.adoc[]
