@@ -23,7 +23,7 @@ ____
 
 == Gradle plugin
 
-This module brings the ability to execute Cukedoctor within a maven build.
+This module brings the ability to execute Cukedoctor within a gradle build.
 
 The plugin just scans *.json* cucumber execution files in _build_ dir and generates asciidoc documentation on _build/cukedoctor_ folder.
 
